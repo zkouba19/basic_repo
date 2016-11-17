@@ -1,0 +1,87 @@
+Zacharys-MacBook-Pro:~ zacharykouba$ cd desktop
+Zacharys-MacBook-Pro:desktop zacharykouba$ mkdir
+usage: mkdir [-pv] [-m mode] directory ...
+Zacharys-MacBook-Pro:desktop zacharykouba$ mkdir basic_repo
+Zacharys-MacBook-Pro:desktop zacharykouba$ cd basic repo
+-bash: cd: basic: No such file or directory
+Zacharys-MacBook-Pro:desktop zacharykouba$ cd basic_repo
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ touch basic.html
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ touch basic.css
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git init
+Initialized empty Git repository in /Users/zacharykouba/Desktop/basic_repo/.git/
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	basic.css
+	basic.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git add .
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git commit -m "initial commit"
+[master (root-commit) 56c88e1] initial commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 basic.css
+ create mode 100644 basic.html
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git remote add origin https://github.com/zkouba19/basic_repo.git
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 214 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/zkouba19/basic_repo.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git branch
+* master
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git branch modifications
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git checkout modifications
+Switched to branch 'modifications'
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git status
+On branch modifications
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   basic.css
+	modified:   basic.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git add .
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git commit -m "making changes to html and css files"
+[modifications f5a4c09] making changes to html and css files
+ 2 files changed, 15 insertions(+)
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git push -u origin modifications
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 467 bytes | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/zkouba19/basic_repo.git
+ * [new branch]      modifications -> modifications
+Branch modifications set up to track remote branch modifications from origin.
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git checkout
+Your branch is up-to-date with 'origin/modifications'.
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git checkout modifications
+Already on 'modifications'
+Your branch is up-to-date with 'origin/modifications'.
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git merge modifications -m "first mods"
+Updating 56c88e1..f5a4c09
+Fast-forward (no commit created; -m option ignored)
+ basic.css  |  3 +++
+ basic.html | 12 ++++++++++++
+ 2 files changed, 15 insertions(+)
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ git push -u origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/zkouba19/basic_repo.git
+   56c88e1..f5a4c09  master -> master
+Branch master set up to track remote branch master from origin.
+Zacharys-MacBook-Pro:basic_repo zacharykouba$ 
